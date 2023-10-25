@@ -66,8 +66,21 @@ buttonHold.addEventListener("click", () => {
   resultatScore = 0;
   scoreRound1.innerText = 0;
   scoreRound2.innerText = 0;
+
   changePlayer();
+  gameOver();
 });
+
+function gameOver() {
+  if (parseInt(currentPlayer1.innerText) >= 100) {
+    alert(`Bravo, ${name1} a gagné !`);
+    return true;
+  } else if (parseInt(currentPlayer2.innerText) >= 100) {
+    alert(`Bravo, ${name2} a gagné !`);
+    return true;
+  }
+  return false;
+}
 
 let newGame = document.querySelector("#newGame");
 
