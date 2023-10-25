@@ -22,11 +22,18 @@ buttonRollDice.addEventListener("click", () => {
 
   if (randomDice !== 1) {
     resultatScore += randomDice;
-    scoreRound1.innerText = resultatScore;
+    if (playerActuel === 0) {
+      scoreRound1.innerText = resultatScore;
+      players[0].classList.add("active");
+    } else {
+      scoreRound2.innerText = resultatScore;
+    }
   } else {
-    scoreRound2.innerText = resultatScore;
+    resultatScore = 0;
+    scoreRound1.innerText = 0;
+    scoreRound2.innerText = 0;
+    changePlayer();
   }
-  changePlayer();
 });
 
 let playerActuel = 0;
@@ -34,12 +41,17 @@ let players = [player1, player2];
 
 function changePlayer() {
   playerActuel = playerActuel === 0 ? 1 : 0;
+  players[0].classList.toggle("active");
+  players[1].classList.toggle("active");
 }
+// premier joueur qui joue
+players[0].classList.add("active");
 
 console.log(players[playerActuel]);
 
 let buttonHold = document.querySelector("#hold");
 let currentPlayer1 = document.querySelector("#currentPlayer1");
+let currentPlayer2 = document.querySelector("#currentPlayer2");
 
 let resultatRound = 0;
 
@@ -47,16 +59,25 @@ buttonHold.addEventListener("click", () => {
   resultatRound += resultatScore;
   if (playerActuel === 0) {
     currentPlayer1.innerText = resultatRound;
+    resultatScore = 0;
   } else {
     currentPlayer2.innerText = resultatRound;
   }
-  console.log(resultatRound);
+  resultatScore = 0;
+  scoreRound1.innerText = 0;
+  scoreRound2.innerText = 0;
+  changePlayer();
 });
 
 let newGame = document.querySelector("#newGame");
 
 newGame.addEventListener("click", () => {
-  document.location.reload();
+  resultatScore = 0;
+  resultatRound = 0;
+  scoreRound1.innerText = 0;
+  scoreRound2.innerText = 0;
+  currentPlayer1.innerText = 0;
+  currentPlayer2.innerText = 0;
+  players[0].classList.add("active");
+  players[1].classList.remove("active");
 });
-
-const currentPlayer2 = document.querySelector("#currentPlayer2");
