@@ -24,7 +24,6 @@ buttonRollDice.addEventListener("click", () => {
     resultatScore += randomDice;
     if (playerActuel === 0) {
       scoreRound1.innerText = resultatScore;
-      players[0].classList.add("active");
     } else {
       scoreRound2.innerText = resultatScore;
     }
@@ -44,7 +43,6 @@ function changePlayer() {
   players[0].classList.toggle("active");
   players[1].classList.toggle("active");
 }
-// premier joueur qui joue
 players[0].classList.add("active");
 
 console.log(players[playerActuel]);
@@ -53,16 +51,18 @@ let buttonHold = document.querySelector("#hold");
 let currentPlayer1 = document.querySelector("#currentPlayer1");
 let currentPlayer2 = document.querySelector("#currentPlayer2");
 
-let resultatRound = 0;
+let resultatRound1 = 0; // score du joueur 1
+let resultatRound2 = 0; // score du joueur 2
 
 buttonHold.addEventListener("click", () => {
-  resultatRound += resultatScore;
   if (playerActuel === 0) {
-    currentPlayer1.innerText = resultatRound;
-    resultatScore = 0;
+    resultatRound1 += resultatScore;
+    currentPlayer1.innerText = resultatRound1;
   } else {
-    currentPlayer2.innerText = resultatRound;
+    resultatRound2 += resultatScore;
+    currentPlayer2.innerText = resultatRound2;
   }
+
   resultatScore = 0;
   scoreRound1.innerText = 0;
   scoreRound2.innerText = 0;
@@ -73,20 +73,18 @@ buttonHold.addEventListener("click", () => {
 
 function gameOver() {
   if (parseInt(currentPlayer1.innerText) >= 100) {
-    alert(`Bravo, ${name1} a gagné !`);
-    return true;
+    alert(`Bravo, ${name1} tu as gagné !`);
   } else if (parseInt(currentPlayer2.innerText) >= 100) {
-    alert(`Bravo, ${name2} a gagné !`);
-    return true;
+    alert(`Bravo, ${name2} tu as gagné !`);
   }
-  return false;
 }
 
 let newGame = document.querySelector("#newGame");
 
 newGame.addEventListener("click", () => {
   resultatScore = 0;
-  resultatRound = 0;
+  resultatRound1 = 0; // réénitialise le score du joueur 1
+  resultatRound2 = 0; // réénitialise le score du joueur 2
   scoreRound1.innerText = 0;
   scoreRound2.innerText = 0;
   currentPlayer1.innerText = 0;
