@@ -73,22 +73,18 @@ buttonHold.addEventListener("click", () => {
 
 function gameOver() {
   if (parseInt(currentPlayer1.innerText) >= 100) {
-    alert(`Bravo, ${name1} tu as gagné !`);
+    alert(`Bravo, ${name1} tu as gagné !  🏆 `);
+    resetGame();
   } else if (parseInt(currentPlayer2.innerText) >= 100) {
-    alert(`Bravo, ${name2} tu as gagné !`);
+    alert(`Bravo, ${name2} tu as gagné !  🏆 `);
+    resetGame();
   }
 }
 
 let newGame = document.querySelector("#newGame");
 
-newGame.addEventListener("click", () => {
-  resultatScore = 0;
-  resultatRound1 = 0; // réénitialise le score du joueur 1
-  resultatRound2 = 0; // réénitialise le score du joueur 2
-  scoreRound1.innerText = 0;
-  scoreRound2.innerText = 0;
-  currentPlayer1.innerText = 0;
-  currentPlayer2.innerText = 0;
-  players[0].classList.add("active");
-  players[1].classList.remove("active");
-});
+newGame.addEventListener("click", resetGame);
+
+function resetGame() {
+  document.location.reload();
+}

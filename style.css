@@ -1,99 +1,123 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    position: relative;
-    align-items: center;
-    width: 70%;
-    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
-    margin-left: 240px;
-    margin-top: 20px;
-    padding-bottom: 30px;
-    padding-top: 50px;
+  font-family: "Lato", sans-serif;
+  position: relative;
+  align-items: center;
+  width: 70%;
+  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+  margin-left: 240px;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  padding-top: 50px;
 }
 
 img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 .newGame {
-    font-size: 20px;
+  font-size: 20px;
 }
-h1, h2, h3 {
-    font-weight: 100px;
-    text-transform: uppercase;
-    font-size: 45px;
-    
+h1,
+h2,
+h3 {
+  font-weight: 100px;
+  text-transform: uppercase;
+  font-size: 45px;
 }
 
 svg {
-    fill: red;
-    
+  fill: red;
 }
 
 .player1 {
-    height: 400px;
+  height: 400px;
 }
 
 .current-score-1 {
-    width: 100px;
-    height: 70px;
-    padding-top: 10px;
-    margin-bottom: 20px;
+  width: 100px;
+  height: 70px;
+  padding-top: 10px;
+  margin-bottom: 20px;
 }
 
-
-.number1, .number2{
-    font-size: 70px;
+.number1,
+.number2 {
+  font-size: 70px;
 }
 
-.dice, .load, .hold {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%)
+.dice,
+.load,
+.hold {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.load button, .hold button {
-    border: none;
-    background-color: transparent
+.load button,
+.hold button {
+  border: none;
+  background-color: transparent;
 }
 #newGame {
-    border: none;
-    margin-left: 45%;
-    background-color: transparent;
+  border: none;
+  margin-left: 45%;
+  background-color: transparent;
 }
 
-.load img, .hold img {
-    width: 35px;
-    height: 35px;
-    margin-right: 30px;
+.load img,
+.hold img {
+  width: 35px;
+  height: 35px;
+  margin-right: 30px;
 }
 .dice {
-
-    top: 33%;
-    width: 85px;
-    height: 85px;
-    filter: drop-shadow(0 0 0.75rem #D6D6D6);
+  top: 33%;
+  width: 85px;
+  height: 85px;
+  filter: drop-shadow(0 0 0.75rem #d6d6d6);
 }
 svg {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .load {
-    bottom: 15%;
-    /*background-color:red;*/
-    font-size: 25px;
-    
+  bottom: 15%;
+  /*background-color:red;*/
+  font-size: 25px;
 }
-
 
 .hold {
-    /*background-color: blue;*/
-    bottom: 5%;
-    font-size: 25px;
+  /*background-color: blue;*/
+  bottom: 5%;
+  font-size: 25px;
 }
+
+/* @media (max-width: 768px) { à modifier
+    body {
+        margin-left: 100px;
+    }
+    .dice{
+        width: 50px;
+        height: 50px;
+    }
+    h1, h2, h3 {
+        font-size: 25px;
+    }
+    .newGame {
+        font-size: 20px;
+    }
+    .hold, .btnLoad{
+        font-size: 15px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    } 
+}*/
