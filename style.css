@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -16,7 +17,9 @@ body {
   margin-top: 20px;
   padding-bottom: 30px;
   padding-top: 50px;
+  
 }
+
 
 img {
   max-width: 100%;
@@ -24,8 +27,12 @@ img {
   height: auto;
 }
 .newGame {
-  font-size: 20px;
+  font-size: 25px;
+  color: #04354E;
+  font-weight: bold;
+  
 }
+
 h1,
 h2,
 h3 {
@@ -43,17 +50,24 @@ svg {
 }
 
 .current-score-1 {
-  width: 100px;
-  height: 70px;
+  width: 120px;
+  height: 90px;
   padding-top: 10px;
   margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #27749B;
+  font-weight: bold;
+  
 }
 
 .number1,
 .number2 {
   font-size: 70px;
+  color: #27749B ;
 }
-
+.number3, .number4 {
+  font-size: 25px;
+}
 .dice,
 .load,
 .hold {
@@ -92,15 +106,27 @@ svg {
 .load {
   bottom: 15%;
   /*background-color:red;*/
-  font-size: 25px;
+  font-size: 30px;
+  
 }
 
 .hold {
   /*background-color: blue;*/
   bottom: 5%;
-  font-size: 25px;
+  font-size: 30px;
+  
+  
 }
-
+.btnLoad {
+  color: #27749B  !important;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.btnHold {
+  color:#27749B  !important;
+  font-weight: bold;
+  margin-top: 10px;
+}
 /* @media (max-width: 768px) { à modifier
     body {
         margin-left: 100px;
