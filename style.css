@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 body {
@@ -17,9 +16,7 @@ body {
   margin-top: 20px;
   padding-bottom: 30px;
   padding-top: 50px;
-  
 }
-
 
 img {
   max-width: 100%;
@@ -27,10 +24,15 @@ img {
   height: auto;
 }
 .newGame {
+  display: flex;
   font-size: 25px;
-  color: #04354E;
+  color: #053d5a;
   font-weight: bold;
-  
+  width: 200px;
+  text-align: center;
+  margin-right: 300px;
+  justify-content: center;
+  margin-left: 41%;
 }
 
 h1,
@@ -55,17 +57,17 @@ svg {
   padding-top: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
-  background-color: #27749B;
+  background-color: #27749b;
   font-weight: bold;
-  
 }
 
 .number1,
 .number2 {
   font-size: 70px;
-  color: #27749B ;
+  color: #27749b;
 }
-.number3, .number4 {
+.number3,
+.number4 {
   font-size: 25px;
 }
 .dice,
@@ -83,8 +85,9 @@ svg {
 }
 #newGame {
   border: none;
-  margin-left: 45%;
+
   background-color: transparent;
+  text-align: center;
 }
 
 .load img,
@@ -107,23 +110,20 @@ svg {
   bottom: 15%;
   /*background-color:red;*/
   font-size: 30px;
-  
 }
 
 .hold {
   /*background-color: blue;*/
   bottom: 5%;
   font-size: 30px;
-  
-  
 }
 .btnLoad {
-  color: #27749B  !important;
+  color: #27749b !important;
   font-weight: bold;
   margin-bottom: 10px;
 }
 .btnHold {
-  color:#27749B  !important;
+  color: #27749b !important;
   font-weight: bold;
   margin-top: 10px;
 }

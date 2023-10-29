@@ -16,14 +16,23 @@ let randomDice;
 let scoreRound1 = document.querySelector("#number1");
 let scoreRound2 = document.querySelector("#number2");
 
+function updateDiceImage(randomDice) {
+  let diceImage = document.getElementById("diceImage");
+  let imagePath = `./images/dice-${randomDice}.png`;
+  diceImage.src = imagePath;
+}
+
 buttonRollDice.addEventListener("click", () => {
   randomDice = Math.floor(Math.random() * 6) + 1;
   console.log(randomDice);
+
+  updateDiceImage(randomDice);
 
   if (randomDice !== 1) {
     resultatScore += randomDice;
     if (playerActuel === 0) {
       scoreRound1.innerText = resultatScore;
+      players[0].classList.add("active"); // a voir si on supprime
     } else {
       scoreRound2.innerText = resultatScore;
     }
