@@ -47,14 +47,20 @@ buttonRollDice.addEventListener("click", () => {
 let playerActuel = 0;
 let players = [player1, player2];
 
+function updateActivePlayer() {
+  const activePlayer = players[playerActuel];
+  const inactivePlayer = players[playerActuel === 0 ? 1 : 0];
+
+  activePlayer.classList.add("active-player");
+  inactivePlayer.classList.remove("active-player");
+}
+
 function changePlayer() {
   playerActuel = playerActuel === 0 ? 1 : 0;
-  players[0].classList.toggle("active");
-  players[1].classList.toggle("active");
+  updateActivePlayer();
 }
-players[0].classList.add("active");
 
-console.log(players[playerActuel]);
+updateActivePlayer();
 
 let buttonHold = document.querySelector("#hold");
 let currentPlayer1 = document.querySelector("#currentPlayer1");
@@ -81,13 +87,28 @@ buttonHold.addEventListener("click", () => {
 });
 
 function gameOver() {
+  const victoryMessageContainer = document.getElementById("victoryMessageContainer");
+  const victoryMessage = document.createElement("div");
+
   if (parseInt(currentPlayer1.innerText) >= 100) {
-    alert(`Bravo, ${name1} tu as gagné !  🏆 `);
-    resetGame();
+    victoryMessage.innerText = `${name1} a gagné ! 🏆`;
   } else if (parseInt(currentPlayer2.innerText) >= 100) {
-    alert(`Bravo, ${name2} tu as gagné !  🏆 `);
-    resetGame();
+    victoryMessage.innerText = `${name2} a gagné ! 🏆`;
+  } else {
+    return; // Aucun message de victoire à afficher
   }
+
+  // Vous pouvez personnaliser le style du message ici
+  victoryMessage.style.fontSize = "24px";
+  victoryMessage.style.fontWeight = "bold";
+  victoryMessage.style.color = "red";
+  victoryMessage.style.textAlign = "center";
+
+  // Effacez le contenu précédent du conteneur de message de victoire
+  victoryMessageContainer.innerHTML = "";
+
+  // Ajoutez le message de victoire au conteneur
+  victoryMessageContainer.appendChild(victoryMessage);
 }
 
 let newGame = document.querySelector("#newGame");
