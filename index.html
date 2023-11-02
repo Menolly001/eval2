@@ -27,12 +27,12 @@
 
   <body>
     <main>
-      <div class="container-sm">
+      <div class="container">
         <div class="menu row d-flex justify-content-center">
           <h1 id="newGame" class="newGame d-flex text-center">new game</h1>
         </div>
         <div class="row justify-content-around">
-          <div class="col-lg-4 col-md-6">
+          <div class="col groupPlayer1">
             <div
               class="d-flex flex-column justify-content-between player1 text-center"
             >
@@ -40,13 +40,13 @@
                 <h1 id="player1">player 1</h1>
                 <span id="number1" class="number1">0</span>
               </div>
-              <div class="d-flex flex-column current-score-1 align-self-center">
+              <div class="d-flex flex-column current1 current-score-1 align-self-center">
                 <span>current</span>
                 <span id="currentPlayer1" class="number3 text-light">0</span>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
+          <div class="col">
             <img
               id="diceImage"
               class="dice center"
@@ -66,7 +66,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
+          <div class="col groupPlayer2">
             <div
               class="d-flex flex-column justify-content-between player2 text-center"
             >
@@ -74,7 +74,7 @@
                 <h1 id="player2">player 2</h1>
                 <span id="number2" class="number2">0</span>
               </div>
-              <div class="d-flex flex-column current-score-1 align-self-center">
+              <div class="d-flex flex-column current2 current-score-1 align-self-center">
                 <span>current</span>
                 <span id="currentPlayer2" class="number4 text-light">0</span>
               </div>
