@@ -32,7 +32,7 @@ buttonRollDice.addEventListener("click", () => {
     resultatScore += randomDice;
     if (playerActuel === 0) {
       scoreRound1.innerText = resultatScore;
-      players[0].classList.add("active"); // a voir si on supprime
+      players[0].classList.add("active"); 
     } else {
       scoreRound2.innerText = resultatScore;
     }
@@ -66,8 +66,8 @@ let buttonHold = document.querySelector("#hold");
 let currentPlayer1 = document.querySelector("#currentPlayer1");
 let currentPlayer2 = document.querySelector("#currentPlayer2");
 
-let resultatRound1 = 0; // score du joueur 1
-let resultatRound2 = 0; // score du joueur 2
+let resultatRound1 = 0; 
+let resultatRound2 = 0; 
 
 buttonHold.addEventListener("click", () => {
   if (playerActuel === 0) {
@@ -92,22 +92,21 @@ function gameOver() {
 
   if (parseInt(currentPlayer1.innerText) >= 100) {
     victoryMessage.innerText = `${name1} a gagné ! 🏆`;
+    
   } else if (parseInt(currentPlayer2.innerText) >= 100) {
     victoryMessage.innerText = `${name2} a gagné ! 🏆`;
+    
   } else {
-    return; // Aucun message de victoire à afficher
+    return; 
   }
 
-  // Vous pouvez personnaliser le style du message ici
   victoryMessage.style.fontSize = "24px";
   victoryMessage.style.fontWeight = "bold";
   victoryMessage.style.color = "red";
   victoryMessage.style.textAlign = "center";
 
-  // Effacez le contenu précédent du conteneur de message de victoire
   victoryMessageContainer.innerHTML = "";
 
-  // Ajoutez le message de victoire au conteneur
   victoryMessageContainer.appendChild(victoryMessage);
 }
 
